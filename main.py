@@ -20,6 +20,7 @@ PASSWORD = ""
 # -------------------------------------------------
 
 MQTT_BROKER = ""
+MQTT_PORT = 
 MQTT_CLIENT = "pico-env"
 
 TOPIC_BASE = "sensors/office"
@@ -53,7 +54,7 @@ def connect_wifi():
 # -------------------------------------------------
 
 def connect_mqtt():
-    client = MQTTClient(MQTT_CLIENT, MQTT_BROKER)
+    client = MQTTClient(MQTT_CLIENT, MQTT_BROKER, port=MQTT_PORT)
     client.connect()
     print("Connected to MQTT")
     return client
